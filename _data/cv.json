@@ -1,0 +1,132 @@
+{
+    "basics": {
+      "name": "Miguel Guerrero",
+      "label": "On the hacker path",
+      "picture": "",
+      "email": "miguel.guerrero@mikemighthack.me",
+      "website": "https://mikemighthack.me",
+      "summary": "Penetration Tester with an interest in infrastructure hacking and social engineering",
+      "location": {
+        "countryCode": "ES",
+        "region": "Catalunya"
+      },
+      "profiles": [
+        {
+          "network": "Twitter",
+          "username": "GLMicky",
+          "url": "https://twitter.com/GLMicky"
+        },
+        {
+          "network": "Linkedin",
+          "username": "Miguel Guerrero López",
+          "url": "https://es.linkedin.com/in/miguel-guerrero-l%C3%B3pez-36736a13a"
+        }
+      ]
+    },
+    "work": [
+      {
+        "company": "Cyberproof",
+        "position": "Pentester",
+        "website": "https://www.cyberproof.es/",
+        "startDate": "15-06-2020",
+        "endDate": "",
+        "summary": "Working as a pentester, performing security audits, mostly of web applications",
+        "highlights": [
+          "OWASP Penetration Testing Methodologies",
+          "Development of internal security applications",
+          "found 0-days vulnerabilities in internal applications"
+        ]
+      },
+      {
+        "company": "Ernst & Young",
+        "position": "Cibersecurity Consultant",
+        "website": "https://www.ey.com/es_es",
+        "startDate": "01-07-2018",
+        "endDate": "01-06-2020",
+        "summary": "Working as a cybersecurity consultant, performing different tasks according to the needs of the clients",
+        "highlights": [
+          "Some web, mobile and wireless network pentesting exercises",
+          "Analyze and scan infrastructures on a recurring basis in order to find vulnerabilities in systems, using tools such as Nessus",
+          "Definition and implementation of use cases in different clients, with the purpose of detecting threats using SIEM tools",
+          "Management of the life cycle of digital certificates in public administration",
+          "Development of digital transformation projects in Catalan public administration"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universitat Poliotècnica de Catalunya (UPC)",
+        "area": "Facultat de Informàtica ()",
+        "studyType": "Bachelor Degree ",
+        "startDate": "2014",
+        "endDate": "2018",
+        "Mention": "Information Technology"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Programming",
+        "keywords": [
+          "Python",
+          "Bash",
+          "C",
+          "C++",
+          "Java"
+        ]
+      },
+      {
+        "name": "Hacking",
+        "keywords": [
+          "Web hacking",
+          "Exploit understanding and tweaking",
+          "Active directory audits basics",
+          "Experience in Phishing Campaigns"
+        ]
+      },
+      {
+        "name": "Vulnerability Scanner Tools",
+        "Keywords": [
+          "Nessus",
+          "Acunetix",
+          "Burp",
+          "OpenVAS"
+        ]
+      },
+      {
+        "name": "Blue team",
+        "Keywords": [
+          "Basic knowledge of how a soc operates and the creation of use cases"
+        ]
+      },
+      {
+      "name": "Cryptography",
+        "Keywords": [
+          "Management of the life cycle of digital certificates"
+        ]
+      }
+    ],
+    "Soft skills": [
+      {
+        "keywords": [
+          "Team Work",
+          "Persistence",
+          "self-taught person",
+          "Responsable"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "language": "Spanish",
+        "fluency": "Native speaker"
+      },
+      {
+        "language": "Catalan",
+        "fluency": "Native speaker"
+      },
+      {
+        "language": "English",
+        "fluency": "Upper Intermediate speaker"
+      }
+    ]
+  }
