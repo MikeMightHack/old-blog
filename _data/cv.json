@@ -59,13 +59,14 @@
         "Mention": "Information Technology"
       }
     ],
-    "cert": [
+    "certificates": [
       {
-        "name": "Offensive Security Certified Professional (OSCP)",
-        "summary": "OS-101-47899"
+        "name": "Offensive Security Certified Professional (OSCP) OS-101-47899",
+        "date": "14/10/2021",
+        "issuer": "Offensive Security",
+        "url": "https://www.offensive-security.com/"
       }
     ],
-
     "skills": [
       {
         "name": "Programming",
