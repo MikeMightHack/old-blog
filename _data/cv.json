@@ -56,13 +56,20 @@
     "education": [
       {
         "institution": "Universitat Poliotècnica de Catalunya (UPC)",
-        "area": "Facultat de Informàtica ()",
+        "area": "Facultat de Informàtica (FIB)",
         "studyType": "Bachelor Degree ",
         "startDate": "2014",
         "endDate": "2018",
         "Mention": "Information Technology"
       }
     ],
+    "cert": [
+      {
+        "name": "Offensive Security Certified Professional (OSCP)",
+        "summary": "OS-101-47899"
+      }
+    ],
+
     "skills": [
       {
         "name": "Programming",
@@ -76,12 +83,7 @@
       },
       {
         "name": "Hacking",
-        "keywords": [
-          "Web hacking",
-          "Exploit understanding and tweaking",
-          "Active directory audits basics",
-          "Experience in Phishing Campaigns"
-        ]
+        "Summary": "Web hacking, Exploit understanding and tweaking, Active directory audits basics and Experience in Phishing Campaigns"
       },
       {
         "name": "Vulnerability Scanner Tools",
@@ -94,20 +96,17 @@
       },
       {
         "name": "Blue team",
-        "Keywords": [
-          "Basic knowledge of how a soc operates and the creation of use cases"
-        ]
+        "Summary": "Basic knowledge of how a soc operates and the creation of use cases"
       },
       {
       "name": "Cryptography",
-        "Keywords": [
-          "Management of the life cycle of digital certificates"
-        ]
+      "Summary": "Management of the life cycle of digital certificates"
       }
     ],
-    "Soft skills": [
+    
+    "Soft Skills": [
       {
-        "keywords": [
+        "Summary": [
           "Team Work",
           "Persistence",
           "self-taught person",
