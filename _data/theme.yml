@@ -38,6 +38,8 @@ t:
   cv_skills: "Skills"
   cv_volunteer: "Volunteer"
   cv_work: "Work"
+  cv_certificates: "Certificates"
+  cv_soft: "Soft Skills" 
 
 # Google Fonts
 google_fonts:

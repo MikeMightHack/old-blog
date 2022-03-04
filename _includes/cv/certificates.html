@@ -1,0 +1,26 @@
+{% if cv.certificates %}
+  <div id="certificates" class="entry">
+    <header class="entry-header">
+        <h3 class="entry-title">{{ site.data.theme.t.cv_certificates | default: 'Certificates' }}</h3>
+    </header>
+
+    <div class="entry-content">
+      {% for c in cv.certificates %}
+        {% if c.name %}
+          <h4 class="position">{{ c.name }}</h4>
+        {% endif %}
+        <div class="date">
+            {% if c.startDate %}
+              <span class="startDate">{{ c.startDate }}</span>
+            {% endif %}
+        </div>
+        {% if c.issuer %}
+            <h5 class="issuer">{{ c.issuer }}</h5>
+        {% endif %}
+        {% if c.url %}
+            <h5 class="url">{{ c.url }}</h5>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
