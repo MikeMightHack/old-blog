@@ -41,6 +41,8 @@ t:
   cv_certificates: "Certificates"
   cv_soft: "Soft Skills" 
 
+
+
 # Google Fonts
 google_fonts:
   - name: "Fira Sans"

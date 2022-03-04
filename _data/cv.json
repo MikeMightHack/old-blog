@@ -60,20 +60,18 @@
         "courses": [
           "Computer Science"
         ]
-
-        }
-      
+      }
     ],
     "certificates": [
       {
         "name": "Offensive Security Certified Professional (OSCP) OS-101-47899",
         "startDate": "14/10/2021",
         "endDate": "",
+        "date": "14/10/2021",
         "issuer": "Offensive Security",
         "url": "https://www.offensive-security.com/"
       }
     ],
-
     "skills": [
       {
         "name": "Programming",
@@ -94,9 +92,8 @@
           "Experience in Phishing Campaigns"
         ]
       },
-      {
         "name": "Vulnerability Scanner Tools",
-        "keywords": [ 
+        "keywords":[
           "Nessus",
           "Acunetix",
           "Burp",
@@ -129,6 +126,18 @@
       },
       {
         "name": "Responsable"
+      }
+     
+    ],
+    
+    "Soft Skills": [
+      {
+        "Summary": [
+          "Team Work",
+          "Persistence",
+          "self-taught person",
+          "Responsable"
+        ]
       }
     ],
     "languages": [
