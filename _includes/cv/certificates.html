@@ -18,7 +18,9 @@
             <h5 class="issuer">{{ c.issuer }}</h5>
         {% endif %}
         {% if c.url %}
-            <h5 class="url">{{ c.url }}</h5>
+            <h5 class="url">
+              <a href="{{ c.url }}"> See my badget!</a>
+            </h5>
         {% endif %}
       {% endfor %}
     </div>

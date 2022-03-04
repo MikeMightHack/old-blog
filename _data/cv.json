@@ -1,158 +1,154 @@
 {
-  "basics": {
-    "name": "Miguel Guerrero",
-    "label": "On the hacker path",
-    "picture": "",
-    "email": "miguel.guerrero@mikemighthack.me",
-    "website": "https://mikemighthack.me",
-    "summary": "Penetration Tester with an interest in Red Team exercises",
-    "profiles": [
+    "basics": {
+      "name": "Miguel Guerrero",
+      "label": "On the hacker path",
+      "picture": "",
+      "email": "miguel.guerrero@mikemighthack.me",
+      "website": "https://mikemighthack.me",
+      "summary": "Penetration Tester with an interest in Red Team exercises",
+      "profiles": [
+        {
+          "network": "Twitter",
+          "username": "GLMicky",
+          "url": "https://twitter.com/GLMicky"
+        },
+        {
+          "network": "Linkedin",
+          "username": "Miguel Guerrero López",
+          "url": "https://es.linkedin.com/in/miguel-guerrero-l%C3%B3pez-36736a13a"
+        },
+        {
+          "network": "Hack The Box",
+          "username": "4Gu4D3M4Y0",
+          "url": "https://app.hackthebox.com/profile/120313"
+        }
+      ]
+    },
+    "work": [
       {
-        "network": "Twitter",
-        "username": "GLMicky",
-        "url": "https://twitter.com/GLMicky"
+        "company": "Cyberproof",
+        "position": "Pentester",
+        "website": "https://www.cyberproof.es/",
+        "startDate": "June 2020",
+        "endDate": "",
+        "summary": "Working as a pentester, performing security audits, mostly of web applications",
+        "highlights": [
+          "OWASP Penetration Testing Methodologies",
+          "Development of internal security applications",
+          "Found zero-day vulnerabilities in applications used internally"
+        ]
       },
       {
-        "network": "Linkedin",
-        "username": "Miguel Guerrero López",
-        "url": "https://es.linkedin.com/in/miguel-guerrero-l%C3%B3pez-36736a13a"
+        "company": "Ernst & Young",
+        "position": "Cybersecurity Consultant",
+        "website": "https://www.ey.com/es_es",
+        "startDate": "July 2018",
+        "endDate": "June 2020",
+        "summary": "Working as a cybersecurity consultant, performing different tasks according to the needs of the clients",
+        "highlights": [
+          "Web, mobile and wireless network pentesting exercises",
+          "Analyze and scan infrastructures on a recurring basis in order to find vulnerabilities in systems, using tools such as Nessus",
+          "Definition and implementation of use cases in different clients, with the purpose of detecting threats using SIEM tools",
+          "Management of the life cycle of digital certificates in public administration",
+          "Development of digital transformation projects in Catalan public administration"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universitat Politècnica de Catalunya (UPC)",
+        "area": "Facultat de Informàtica (FIB)",
+        "studyType": "Bachelor's Degree in Computer Science",
+        "startDate": "2014",
+        "endDate": "2018",
+        "Mention": "Information Technology"
+        }
+      
+    ],
+    "certificates": [
+      {
+        "name": "Offensive Security Certified Professional (OSCP) OS-101-47899",
+        "startDate": "October 2021",
+        "endDate": "",
+        "issuer": "Offensive Security",
+        "url": "https://www.credly.com/badges/6b6a9178-29b0-4818-9b2d-7d8b40afd433?source=linked_in_profile"
+      }
+    ],
+
+    "projects": [
+      {
+        "name": "CarLocator",
+        "releaseDate": "May 2018",
+        "repository": "https://github.com/joansalto/PTI-ProjectGPS",
+        "summary": "CarLocator is a project that integrates a Raspberry Pi 3 with a GPS module, a Mini ELM327 Interface V2.1 Bluetooth OBD-II, a Web interface developed with Node.js and a Telegram BOT to create a solution for monitoring and tracking of a vehicle."
+      }
+    ],
+
+    "publications": [
+      {
+        "name": "NEO-6M módulo GPS",
+        "publisher": "Foro Raspberry Pi en Español",
+        "releaseDate": "May 2018",
+        "website": "https://www.fororaspberry.es/viewtopic.php?t=10867",
+        "summary": "Tutorial on how to connect and use the NEO-6M GPS module on a Raspberry Pi 3. It is the GPS part of the CarLocator project. (Spanish only)"
+      }
+    ],
+
+    "skills": [
+      {
+        "name": "Programming",
+        "keywords": [
+          "Use of Python for develop tools or scripts for automatization",
+          "Bash and Powershell to automate tasks via scripts",
+          "Knowledge of C++ and Java as object-oriented languages.",
+          "C and Assembly as lower level languages"
+        ]
+      },
+      {
+        "name": "Hacking",
+        "keywords": [
+          "Web Application Attacks.",
+          "Exploit understanding and tweaking",
+          "Active directory audits basics",
+          "Client-side attacks, using frameworks as BeEF or GoPhish",
+          "Use of explotation and vulnerability validation tools as Metasploit framework."
+        ]
+      },
+      {
+        "name": "Vulnerability Scanner Tools",
+        "keywords": [ 
+          "Nessus",
+          "Acunetix",
+          "Burp Suite",
+          "OpenVAS"
+        ]
+      },
+      {
+        "name": "Blue team",
+        "keywords": [ 
+          "Basic knowledge of how a soc operates and the creation of use cases"
+        ]
+      },
+      {
+      "name": "Cryptography",
+      "keywords": [ 
+         "Management of the life cycle of digital certificates"
+      ]
+      }
+    ],
+    
+    "languages": [
+      {
+        "language": "Spanish",
+        "fluency": "Native speaker"
+      },
+      {
+        "language": "Catalan",
+        "fluency": "Native speaker"
+      },
+      {
+        "language": "English",
+        "fluency": "Upper Intermediate speaker"
       }
     ]
-  },
-  "work": [
-    {
-      "company": "Cyberproof",
-      "position": "Pentester",
-      "website": "https://www.cyberproof.es/",
-      "startDate": "15-06-2020",
-      "endDate": "",
-      "summary": "Working as a pentester, performing security audits, mostly of web applications",
-      "highlights": [
-        "OWASP Penetration Testing Methodologies",
-        "Development of internal security applications",
-        "found 0-days vulnerabilities in internal applications"
-      ]
-    },
-    {
-      "company": "Ernst & Young",
-      "position": "Cibersecurity Consultant",
-      "website": "https://www.ey.com/es_es",
-      "startDate": "01-07-2018",
-      "endDate": "01-06-2020",
-      "summary": "Working as a cybersecurity consultant, performing different tasks according to the needs of the clients",
-      "highlights": [
-        "Some web, mobile and wireless network pentesting exercises",
-        "Analyze and scan infrastructures on a recurring basis in order to find vulnerabilities in systems, using tools such as Nessus",
-        "Definition and implementation of use cases in different clients, with the purpose of detecting threats using SIEM tools",
-        "Management of the life cycle of digital certificates in public administration",
-        "Development of digital transformation projects in Catalan public administration"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "institution": "Universitat Poliotècnica de Catalunya (UPC)",
-      "area": "Facultat de Informàtica (FIB)",
-      "studyType": "Bachelor Degree ",
-      "startDate": "2014",
-      "endDate": "2018",
-      "Mention": "Information Technology",
-      "courses": [
-        "Computer Science"
-      ]
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Offensive Security Certified Professional (OSCP) OS-101-47899",
-      "startDate": "14/10/2021",
-      "endDate": "",
-      "date": "14/10/2021",
-      "issuer": "Offensive Security",
-      "url": "https://www.offensive-security.com/"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Programming",
-      "keywords": [
-        "Python",
-        "Bash",
-        "C",
-        "C++",
-        "Java"
-      ]
-    },
-    {
-      "name": "Hacking",
-      "keywords": [
-        "Web hacking",
-        "Exploit understanding and tweaking",
-        "Active directory audits basics",
-        "Experience in Phishing Campaigns"
-      ]
-    },
-    {
-    "name": "Vulnerability Scanner Tools",
-    "keywords":[
-      "Nessus",
-      "Acunetix",
-      "Burp",
-      "OpenVAS"
-    ]
-  },
-  {
-    "name": "Blue team",
-    "keywords": [ 
-      "Basic knowledge of how a soc operates and the creation of use cases"
-    ]
-  },
-  {
-    "name": "Cryptography",
-    "keywords": [ 
-     "Management of the life cycle of digital certificates"
-   ]
   }
-],
-
-  "soft": [
-    {
-      "name": "Team Work"
-    },
-    {
-      "name": "Persistence"
-    },
-    {
-      "name": "Self-taught person"
-    },
-    {
-      "name": "Responsable"
-    }
-
-  ],
-
-  "Soft Skills": [
-    {
-      "Summary": [
-        "Team Work",
-        "Persistence",
-        "self-taught person",
-        "Responsable"
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "Spanish",
-      "fluency": "Native speaker"
-    },
-    {
-      "language": "Catalan",
-      "fluency": "Native speaker"
-    },
-    {
-      "language": "English",
-      "fluency": "Upper Intermediate speaker"
-    }
-  ]
-}
