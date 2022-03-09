@@ -1,5 +1,7 @@
 ---
 title: "Router Space HTB Walkthrough "
+image: 
+  path: /assets/images/HTB/RouterSpace/routerspace.png
 sub_title: "An easy machine of Hack the Box"
 categories:
   - HackTheBox
@@ -8,7 +10,7 @@ categories:
 last_modified_at: 2017-03-09T10:55:59-05:00
 ---
 
-  
+{: .text-justify}  
 We start with a basic nmap. We see that we have port 22 (ssh) and 80 (http) open.
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309160318.png){: .align-center}
 
@@ -30,8 +32,9 @@ To do this, we can configure the burp as follows:
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309160837.png){: .align-center}
 
   
-In the address field, we use the IP of our HTB vpn, in my case the tun0 interface IP address. Using adb, we configure the anbox emulator proxy: 
-```adb shell settings put global http_proxy <tun0>:8080```
+In the address field, we use the IP of our HTB vpn, in my case the tun0 interface IP address. Using adb, we configure the anbox emulator proxy:
+
+``adb shell settings put global http_proxy <IP>:8080``
 
 Once configured, we will see the following request made by the application:
 
@@ -81,7 +84,7 @@ In paul's home, we have the user.txt.
 
 ## Privilege Escalation
 
-To escalate privileges, we will use LinPEAS.sh https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS.
+To escalate privileges, we will use [LinPEAS.sh](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS).
 
 To transfer the file to the victim machine, we can do it through scp:
 
@@ -96,7 +99,7 @@ In the output of the tool, ee see that it is vulnerable to CVE-2021-3156 (Sudo B
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309163418.png){: .align-center}
 
 To exploit the vulnerability we will use the following exploit: 
-- https://github.com/worawit/CVE-2021-3156/blob/main/exploit_nss.py
+- [Exploit (Worawit)](https://github.com/worawit/CVE-2021-3156/blob/main/exploit_nss.py)
 
 Transfer the exploit using scp and execute it:
 

@@ -19,13 +19,13 @@ email: miguel.guerrero@mikemighthack.me
 description: This is my personal Blog
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: "https://mikemighthack.me/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-author:
-  name:
-  twitter:
-  picture: /assets/images/logo.jpg
+#author:
+#  name: Miguel Guerrero
+#  twitter:
+#  picture:
 twitter_username:
 github_username:
-logo: /assets/icons/logo.ico # path of site logo, e.g. "/assets/images/logo.jpg"
+logo: /assets/images/logo.jpg # path of site logo, e.g. "/assets/images/logo.jpg"
 search: # true, false (default)
 search_full_content: false # true, false (default)
 search_provider: # lunr (default), algolia
@@ -71,12 +71,13 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - /docs # ignore Basically Basic sample site
-  - /example # ignore Basically Basic dev site
+
+
+
 
 # Front Matter Defaults
 defaults:
-  # _posts
+  #_posts
   - scope:
       path: "_posts"
       type: posts
