@@ -34,7 +34,9 @@ To do this, we can configure the burp as follows:
   
 In the address field, we use the IP of our HTB vpn, in my case the tun0 interface IP address. Using adb, we configure the anbox emulator proxy:
 
-``adb shell settings put global http_proxy <IP>:8080``
+```sh
+adb shell settings put global http_proxy <IP>:8080
+```
 
 Once configured, we will see the following request made by the application:
 
@@ -51,7 +53,7 @@ If we modify the IP parameter, to try to inject a command, we see in the respons
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309161318.png){: .align-center}
 
-But if we try to bypass the filter with the following characters, for example: **;**, **|**, **\n**, we see in the response the result of the command.
+But if we try to bypass the filter with the following characters, for example: ``;, |, \n,`` we see in the response the result of the command.
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309161526.png){: .align-center}
 
@@ -66,17 +68,23 @@ We can generate an rsa key for ssh and write the public key to the authorized_ke
 
 To generate the keys:
 
-``ssh-keygen -t rsa``
+```sh
+ssh-keygen -t rsa
+```
 
 To upload the public key:
 
-``; echo 'public key'``
+```sh
+; echo 'public key'
+```
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309162249.png){: .align-center}
 
 Once uploaded, we can connect with the following command: 
 
-``ssh -i id_rsa paul@10.10.11.148``
+```sh
+ssh -i id_rsa paul@10.10.11.148
+```
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\HTB\RouterSpace\20220309163123.png){: .align-center}
 
@@ -88,11 +96,15 @@ To escalate privileges, we will use [LinPEAS.sh](https://github.com/carlospolop/
 
 To transfer the file to the victim machine, we can do it through scp:
 
-``scp -i id_rsa ~/tools/PrivEsc/linux/linpeas.sh paul@10.10.11.148:.``
+```sh
+scp -i id_rsa ~/tools/PrivEsc/linux/linpeas.sh paul@10.10.11.148:.
+```
 
 Execute:
 
-``./linpeas.sh``
+```sh
+./linpeas.sh
+```
 
 In the output of the tool, ee see that it is vulnerable to CVE-2021-3156 (Sudo Baron Samedit) as is is shown in the image below:
 
