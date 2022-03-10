@@ -2,7 +2,7 @@
 layout: page
 ---
 
-{{ content }}
+{{ content | strip_html | truncatewords:75}}
 
 <ul class="taxonomy-index">
   {% assign postsInYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
