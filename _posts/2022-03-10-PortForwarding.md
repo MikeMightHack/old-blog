@@ -140,7 +140,7 @@ meterpreter > portfwd list
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\tutorials\PortForwarding\20220310135630.png){: .align-center}
 
-## Practice ![]({{ site.url }}{{ site.baseurl }}\assets\images\tutorials\PortForwarding\htb.ico){}
+## Practice
 If you want to practice the techniques and tools explained in this post, you can make the following hack the box machines:
 
 - Granny
