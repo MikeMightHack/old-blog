@@ -102,8 +102,6 @@ Then we will be able to reach the remote HTTP server in our localhost port 8000.
 
 #### Socat
 
-For port forwarding using SOCAT, we have to run the following command:
-
 ```sh
 root@kali:~/tools$ socat TCP-LISTEN:localport,fork,reuseaddr TCP:remoteIP:remoteport
 root@kali:~/tools$ socat TCP-LISTEN:10000,fork,reuseaddr TCP:192.168.164.130:8000
@@ -117,7 +115,8 @@ root@kali:~/tools$ nc -l -p 12000 0<pivot | nc 192.168.164.130 8000 1>pivot
 
 #### Msfconsole / meterpreter
 
-Use auxiliary/scanner/ssh/ssh_login module for create a session
+Use auxiliary/scanner/ssh/ssh_login module to create a session
+
 ```sh
 root@kali:~/tools$ msfconsole
 msf5 use auxiliary/scanner/ssh/ssh_login
